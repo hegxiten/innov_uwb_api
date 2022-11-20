@@ -206,13 +206,13 @@ if __name__ == "__main__":
         DeviceCoordinates(0x6818, 1, Coordinates(-1486213.1025745637,   798807.6521546288,  29083.006332569028)),
         ################ Penn ################
         DeviceCoordinates(0x680A, 1, Coordinates(0                  ,   0                   ,  2057.076320127741)),
-        DeviceCoordinates(0x6843, 1, Coordinates(-6957.994192102367 ,   6.937585230431794   ,  1069.9519419342751)),
-        DeviceCoordinates(0x685A, 1, Coordinates(-9666.944320674519 ,   9.46632149975476    ,  1058.4338467646317)),
-        DeviceCoordinates(0x6859, 1, Coordinates(-16207.15403463636 ,   15.124946312484093  ,  1076.8917475791753)),
-        DeviceCoordinates(0x6870, 1, Coordinates(-23700.366550654884,   20.13955687570101   ,  1165.1307180998902)),
-        DeviceCoordinates(0x6872, 1, Coordinates(-21420.749460693273,   22.674154582084473  ,  1317.62621358809)),
-        DeviceCoordinates(0x6839, 1, Coordinates(-4993.4323135565   ,   8.815756644632678   ,  1062.451837109625)),
-        DeviceCoordinates(0x683D, 1, Coordinates( 2350.8370660298654,   2.5147043727960483  ,  1041.9989227180813)),
+        DeviceCoordinates(0x6843, 1, Coordinates(-6957.994192102367 ,   6937.585230431794   ,  1069.9519419342751)),
+        DeviceCoordinates(0x685A, 1, Coordinates(-9666.944320674519 ,   9466.32149975476    ,  1058.4338467646317)),
+        DeviceCoordinates(0x6859, 1, Coordinates(-16207.15403463636 ,   15124.946312484093  ,  1076.8917475791753)),
+        DeviceCoordinates(0x6870, 1, Coordinates(-23700.366550654884,   20139.55687570101   ,  1165.1307180998902)),
+        DeviceCoordinates(0x6872, 1, Coordinates(-21420.749460693273,   22674.154582084473  ,  1317.62621358809)),
+        DeviceCoordinates(0x6839, 1, Coordinates(-4993.4323135565   ,   8815.756644632678   ,  1062.451837109625)),
+        DeviceCoordinates(0x683D, 1, Coordinates( 2350.8370660298654,   2514.7043727960483  ,  1041.9989227180813)),
     ]
 
     # Whether or not to use geodetic instead of enu
@@ -228,8 +228,8 @@ if __name__ == "__main__":
     use_processing = True
 
     # configure if you want to route OSC to outside your localhost. Networking knowledge is required.
-    ip = "127.0.0.1"
-    network_port = 8888
+    ip = "54.152.142.229"
+    network_port = 57546
 
     osc_udp_client = None
     if use_processing:
