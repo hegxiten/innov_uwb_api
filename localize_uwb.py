@@ -258,6 +258,7 @@ if __name__ == "__main__":
     # Main thread positioning starts here
     with open("./{}.log".format(dt_string), "a") as writer:
         while True:
+            sleep(0.025)
             pos, status = r.loop()
             r.writeToLog(pos, writer)
             
