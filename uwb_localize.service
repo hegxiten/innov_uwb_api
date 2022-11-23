@@ -3,7 +3,6 @@ After=network.target
 
 [Service]
 Type=simple
-User=rutgers_cait
 Restart=always
 ExecStart=/usr/local/bin/run_uwb_localize.sh
 
