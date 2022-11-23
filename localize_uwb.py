@@ -191,7 +191,7 @@ class ReadyToLocalize(object):
 
 if __name__ == "__main__":
     # Check for the latest PyPozyx version. Skip if this takes too long or is not needed by setting to False.
-    check_pypozyx_version = True
+    check_pypozyx_version = False
     if check_pypozyx_version:
         perform_latest_version_check()
 
