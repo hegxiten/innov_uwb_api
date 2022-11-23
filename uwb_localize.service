@@ -6,7 +6,7 @@ After=network.target remote-fs.target
 Type=simple
 WorkingDirectory=/home/rutgers_cait/
 User=rutgers_cait
-ExecStart=/usr/bin/python3 /home/rutgers_cait/innov_uwb_api/localize_uwb.py > /dev/null 2>&1 &
+ExecStart=/home/rutgers_cait/anaconda3/bin/python /home/rutgers_cait/innov_uwb_api/localize_uwb.py > /dev/null 2>&1 &
 Restart=always
 RestartSec=10s
 
