@@ -20,7 +20,7 @@ from datetime import datetime
 import sys
 import pymap3d
 
-from pypozyx import (POZYX_POS_ALG_UWB_ONLY, POZYX_3D, Coordinates, POZYX_SUCCESS, PozyxConstants, version,
+from pypozyx import (POZYX_POS_ALG_UWB_ONLY, POZYX_3D, Coordinates, POZYX_SUCCESS, PozyxConstants, version, UWBSettings,
                      DeviceCoordinates, PozyxSerial, get_first_pozyx_serial_port, SingleRegister, DeviceList, PozyxRegisters)
 from pythonosc.udp_client import SimpleUDPClient
 
@@ -74,6 +74,20 @@ class ReadyToLocalize(object):
 
         self.setAnchorsManual(save_to_flash=False)
         self.printPublishConfigurationResult()
+
+        # Check and set up channel, bitrate, prf, and plen
+        config = [1, 129, 12, 66]
+        uwb_settings = UWBSettings()
+        self.pozyx.getUWBSettings(uwb_settings)
+        if uwb_settings.data != config:
+            print("Tag config does not conform. Resetting tag...")
+            uwb_settings.load(config)
+            if self.pozyx.setUWBSettings(uwb_settings) == POZYX_SUCCESS:
+                print("Successfully reset Tag config. ")
+            else:
+                print("Tag config wrong and couldn't be automatically reset. Quit service. ")
+                quit()
+
 
     def loop(self):
         """Performs positioning and displays/exports the results."""
