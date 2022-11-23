@@ -1,10 +1,13 @@
 [Unit]
-After=network.target
+Description=uwb_pozyx_localization
+After=network.target remote-fs.target
 
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/local/bin/run_uwb_localize.sh
+RestartSec=1
+User=root
+ExecStart=/usr/bin/python3 /home/rutgers_cait/innov_uwb_api/localize_uwb.py > /dev/null 2>&1 &
 
 [Install]
 WantedBy=multi-user.target
